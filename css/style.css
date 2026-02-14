@@ -1,12 +1,26 @@
+:root {
+    --svh: 100vh;
+}
+
+@supports (height: 100svh) {
+    :root { --svh: 100svh; }
+}
+
+html, body {
+    height: 100%;
+}
+
 body {
     margin: 0;
-    height: 100vh;
+    min-height: var(--svh);
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #ffebee;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    overflow: hidden; /* Evita scroll se il bottone scappa fuori */
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+    box-sizing: border-box;
+    overflow: auto;
 }
 
 .container {
@@ -15,6 +29,9 @@ body {
     padding: 2rem;
     border-radius: 20px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 420px;
+    box-sizing: border-box;
 }
 
 #main-gif {
