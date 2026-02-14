@@ -1,0 +1,154 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffebee;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden; /* Evita scroll se il bottone scappa fuori */
+}
+
+.container {
+    text-align: center;
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+#main-gif {
+    width: 350px;
+    max-width: 90vw;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #d32f2f;
+}
+
+.buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+button {
+    padding: 10px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+#yes-btn {
+    background-color: #4caf50;
+    color: white;
+}
+
+#no-btn {
+    background-color: #f44336;
+    color: white;
+    position: relative; /* Importante per il movimento JS */
+}
+
+.hidden {
+    display: none;
+}
+
+/* Ensure success message image is responsive */
+#success-message img {
+    width: 420px;
+    max-width: 80vw;
+    height: auto;
+    display: block;
+    margin: 0 auto 1rem;
+    border-radius: 12px;
+}
+
+#success-message {
+    padding-top: 8px;
+}
+
+/* Heart rain styles */
+.heart {
+    position: fixed;
+    top: -60px;
+    pointer-events: none;
+    color: #e53935;
+    font-size: 32px;
+    z-index: 9999;
+    transform: translateY(0) rotate(0deg);
+    will-change: transform, opacity;
+    animation-name: fall;
+    animation-timing-function: linear;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-10vh) rotate(0deg);
+        opacity: 1;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Responsive tweaks for small screens */
+@media (max-width: 480px) {
+    .container {
+        padding: 1rem;
+        border-radius: 12px;
+        max-width: 95vw;
+    }
+
+    #main-gif {
+        width: 70vw;
+        max-width: none;
+        margin-bottom: 12px;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+        margin: 0.25rem 0 0.5rem;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 18px;
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+
+    /* Slightly smaller hearts on mobile to avoid occluding content */
+    .heart {
+        font-size: 20px;
+    }
+
+    /* Success message adjustments on small screens */
+    #success-message img {
+        width: 70vw;
+        max-width: 70vw;
+        margin-bottom: 8px;
+    }
+
+    #success-message h1 {
+        font-size: 1.1rem;
+        margin-bottom: 6px;
+    }
+
+    #success-message p {
+        font-size: 0.95rem;
+    }
+}
