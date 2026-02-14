@@ -107,6 +107,8 @@ button {
         padding: 1rem;
         border-radius: 12px;
         max-width: 95vw;
+        width: 100%;
+        max-width: 420px;
     }
 
     #main-gif {
@@ -124,6 +126,7 @@ button {
         flex-direction: column;
         gap: 18px;
         margin-top: 18px;
+        align-items: center;
     }
 
     button {
@@ -131,10 +134,14 @@ button {
         padding: 8px 16px;
     }
 
-    /* Make buttons wider on mobile for larger touch targets */
+    /* Make buttons comfortable but centered on mobile */
     .buttons button {
-        width: 90vw;
+        width: 90%;
         max-width: 320px;
+        margin: 0;
+        box-sizing: border-box;
+        font-size: 0.98rem;
+        padding: 10px 18px;
     }
 
     /* Slightly smaller hearts on mobile to avoid occluding content */
